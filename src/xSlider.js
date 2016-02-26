@@ -5,9 +5,7 @@
  * @author Xinbo Shang
  *
  */
-
 "use strict";
-
 (function(factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as anonymous module.
@@ -29,7 +27,8 @@
         xSlider: function(options) {
             var defaults = {
                 auto: true,
-                foot: 1,
+                nav: true,
+                page: true,
                 scrollNum: 1,
                 direction:'ltr',
                 controls: true,
@@ -93,15 +92,22 @@
                             });
                         }
 
-                        // focus points
-                        if (options.foot == 1) {
+
+                        if (options.nav||options.page) {
                             var dom = '<div class="xslider-nav">';
-                            for (var i = 0; i < group; i++) {
-                                if (i == 0) {
-                                    dom += '<span class="active"></span>';
-                                } else {
-                                    dom += '<span></span>';
+
+                            if(options.nav){
+
+                                for (var i = 0; i < group; i++) {
+                                    if (i == 0) {
+                                        dom += '<span class="active"></span>';
+                                    } else {
+                                        dom += '<span></span>';
+                                    }
                                 }
+                            }
+                            if (options.page) {
+                                dom += '<p><font>1</font>/' + group + '</p>';
                             }
                             dom += '</div>';
                             cont.append(dom).find('.xslider-nav').on('click', 'span', function() {
@@ -112,10 +118,6 @@
                                     _this.autoPlay();
                                 }
                             });
-                        }
-                        if (options.foot == 2) {
-                            var dom = '<div class="xslider-nav"><p><font>1</font>/' + group + '</p></div>';
-                            cont.append(dom);
                         }
 
                         if (options.hover) {
@@ -179,9 +181,10 @@
                         }
                     },
                     setPosition: function(num, dir) {
-                        if(options.foot==1){
+                        if(options.nav){
                             cont.find('.xslider-nav').find('span').removeClass('active').eq(num).addClass('active');
-                        }else{
+                        }
+                        if(options.page){
                             cont.find('.xslider-nav').find('font').html(num+1);
                         }
                     },
@@ -190,7 +193,7 @@
                             if (options.controls) {
                                 $('.xslider-arrow', cont).remove();
                             }
-                            if (options.foot == 1) {
+                            if (options.nav) {
                                 cont.find('.xslider-nav').remove();
                             }
                             this.stopAuto();
