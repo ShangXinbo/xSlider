@@ -2,7 +2,7 @@
   "name": "xSlider",
   "version": "1.4.0",
   "description": "a clean slider.",
-  "main": "src/js/unslider.js",
+  "main": "src/xSlider.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/shangxinbo/xSlider.git"
@@ -20,7 +20,7 @@
     "url": "https://github.com/shangxinbo/xSlider/issues"
   },
   "dependencies": {
-    "jquery": "1.10.1"
+    "jquery": "1.12.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
