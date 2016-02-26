@@ -28,9 +28,9 @@
             var defaults = {
                 auto: true,
                 nav: true,
-                page: true,
+                page: false,
                 scrollNum: 1,
-                direction:'ltr',
+                direction:'ltr',  //ltr rtl
                 controls: true,
                 interval: 2000,
                 speed: 300,
@@ -150,8 +150,9 @@
                     animate: function(num) {
                         working = true;
                         var _this = this;
-                        setUl.animate({
-                            left: '-' + num*100 +'%'
+                        console.log(num);
+                        setUl.velocity({
+                            left: -num*100 +'%'
                         }, options.speed, function() {  
                             if(num<0){
                                 current=group-1;
