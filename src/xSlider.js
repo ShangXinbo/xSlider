@@ -198,7 +198,7 @@
                 if (options.controls) {
                     $('.xslider-arrow', cont).remove();
                 }
-                if (options.nav) {
+                if (options.nav||options.page) {
                     cont.find('.xslider-nav').remove();
                 }
                 this.stopAuto();
@@ -210,7 +210,7 @@
     $.fn.xSlider = function(options) {
         //Multi element support
         return this.each(function() {
-            if(!$(this).data('xSlider')){ //防止多次实例化
+            if(!$(this).data('xSlider')){   // Prevent multiple instantiation
                 $(this).data('xSlider',1);
                 var s = new xSlider(this, options);
             } 
