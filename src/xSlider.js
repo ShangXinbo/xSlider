@@ -1,6 +1,6 @@
 /*
  * @fileOverview xSlider
- * @version 1.5.0
+ * @version 1.5.1
  * @date 2016-2-25
  * @author Xinbo Shang
  *
@@ -86,12 +86,12 @@
             if (this.OPTIONS.controls) {
                 var _this = this;
                 this.CONTAIN.append('<div class="xslider-arrow"><span class="prev"></span><span class="next"></span></div>').find('.xslider-arrow')
-                    .on('click', '.next', function(event) {
-                        _this.toNext();
-                    })
-                    .on('click', '.prev', function(event) {
-                        _this.toPrev();
-                    });
+                .on('click', '.next', function(event) {
+                    _this.toNext();
+                })
+                .on('click', '.prev', function(event) {
+                    _this.toPrev();
+                });
             }
         },
         // set nav and pages

@@ -1,17 +1,16 @@
+
 var combiner = require('stream-combiner2');
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 var gulp = require('gulp');
 
-gulp.task('default', function() {
-  var combined = combiner.obj([
-    gulp.src('src/*.js'),
-    uglify(),
-    gulp.dest('dist/')
-  ]);
+var release_version = '1.5.1'
 
-  // 任何在上面的 stream 中发生的错误，都不会抛出，
-  // 而是会被监听器捕获
-  combined.on('error', console.error.bind(console));
-
-  return combined;
+gulp.task('js compress', function() {
+    var dest = 'dist/';
+    return gulp.src('src/*.js')
+        .pipe(uglify())
+        .pipe(rename({ extname: '.min.js' }))
+        .pipe(gulp.dest(dest));
 });
+gulp.task('default', ['js compress']);
