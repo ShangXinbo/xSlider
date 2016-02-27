@@ -209,12 +209,11 @@
         }
     };
 
-    $.fn.extend({
-        xSlider: function(options) {
-            //Multi element support
-            return this.each(function() {
-                var s = new xSlider(this,options);
-            });
-        }
-    });
+    $.fn.extend.xSlider = function(options) {
+        //Multi element support
+        return this.each(function() {
+            var s = new xSlider(this,options);
+        });
+    }
+    
 }));
