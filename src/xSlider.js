@@ -210,7 +210,10 @@
     $.fn.xSlider = function(options) {
         //Multi element support
         return this.each(function() {
-            var s = new xSlider(this, options);
+            if(!$(this).data('xSlider')){ //防止多次实例化
+                $(this).data('xSlider',1);
+                var s = new xSlider(this, options);
+            } 
         });
     }
 
