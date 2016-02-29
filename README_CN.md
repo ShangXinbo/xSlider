@@ -1,5 +1,5 @@
 # xSlider
-一个极其轻量的可自定义的jquery slider
+一个极其轻量的可自定义的jQuery slider
 
 [English introduction](https://github.com/ShangXinbo/xSlider/blob/master/README.md)
 

@@ -21,7 +21,7 @@ direction| 'rtl'or'ltr'| if it's setted be 'ltr', switching is from left to righ
 controls | boolen      | show the next button and prev button 
 hoverStop| boolen      | when mouse over the widget, auto play stop. 
 
-##dome
+##demo
 $('.class').xSlider({
     autoPlay:true,
     speed:300
