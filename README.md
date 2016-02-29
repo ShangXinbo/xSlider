@@ -3,6 +3,7 @@ A light and customize slider for jQuery
 
 ##options
 name     | value       | description
+---------|-------------|----
 autoPlay | boolean     | Whether the automatic switching execution in finished loading
 interval | millisecond | switching interval
 speed    | millisecond | time during swicthing
