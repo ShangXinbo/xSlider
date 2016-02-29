@@ -169,7 +169,6 @@
             var _this = this;
             this.IS_WORKING = true;
             this.stopAuto();
-            console.log($.Velocity);
             this.UL.myAnimate({
                 left: -num * 100 + '%'
             }, _this.OPTIONS.speed, function() {
