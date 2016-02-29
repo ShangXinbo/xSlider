@@ -13,3 +13,9 @@ scrollNum| number      | the number of switching items everytime
 direction| 'rtl'or'ltr'| if it's setted be 'ltr', switching is from left to right.so like 'rtl'.default is 'ltr'
 controls | boolen      | show the next button and prev button 
 hoverStop| boolen      | when mouse over the widget, auto play stop. 
+
+##dome
+$('.class').GeoSlider({
+    auto:true,
+    speed:300
+})
