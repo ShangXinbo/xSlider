@@ -1,8 +1,8 @@
 /*
  * @fileOverview xSlider
- * @version 1.5.1
- * @date 2016-2-25
- * @author Xinbo Shang
+ * @version   1.5.1
+ * @date      2016-2-25
+ * @author    Xinbo Shang
  *
  */
 
@@ -57,7 +57,6 @@
         },
 
         init: function() {
-
             var items = this.LI,
                 scroll = this.OPTIONS.scrollNum;
 
@@ -166,7 +165,8 @@
             var _this = this;
             this.IS_WORKING = true;
             this.stopAuto();
-            this.UL.velocity({
+            console.log($.Velocity);
+            this.UL.myAnimate({
                 left: -num * 100 + '%'
             }, _this.OPTIONS.speed, function() {
                 if (num < 0) {
@@ -207,6 +207,7 @@
         }
     };
 
+    $.fn.myAnimate = $.Velocity ? $.fn.velocity : $.fn.animate;
     $.fn.xSlider = function(options) {
         //Multi element support
         return this.each(function() {
@@ -216,5 +217,6 @@
             } 
         });
     }
+    
 
 }));
