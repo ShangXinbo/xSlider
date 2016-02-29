@@ -6,7 +6,7 @@
 ##说明
 * 该插件基于jQuery,必须要在jquery引入之后执行，否则会报错。
 * 该插件理论可兼容至IE6
-* 该插件可以使用velocity,提高动画性能
+* 该插件可以使用velocity,提高动画性能.如果[velocity](https://github.com/julianshapiro/velocity)载入了，则用$.fn.velocity 代替$.fn.animate 来提高动画性能。
 
 
 ##设置
