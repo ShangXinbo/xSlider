@@ -6,7 +6,7 @@ A light and customize slider for jQuery
 ##intro
 * require jQuery
 * support browsers : IE6+,safari,chrome,firefox,opera
-* if velocity is defined,performance better
+* if velocity is defined,performance better(if $.Velocity is defined, $.fn.velocity replace $.fn.animate)
 
 ##options
 name     | value       | description
