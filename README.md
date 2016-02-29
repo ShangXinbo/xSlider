@@ -4,9 +4,9 @@ A light and customize slider for jQuery
 [《中文说明》](https://github.com/ShangXinbo/xSlider/blob/master/README_CN.md)
 
 ##intro
-*require jQuery
-*support browsers : IE6+,safari,chrome,firefox,opera
-*if velocity is defined,performance better
+* require jQuery
+* support browsers : IE6+,safari,chrome,firefox,opera
+* if velocity is defined,performance better
 
 ##options
 name     | value       | description
