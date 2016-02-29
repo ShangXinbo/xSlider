@@ -16,6 +16,6 @@ hoverStop| boolen      | when mouse over the widget, auto play stop.
 
 ##dome
 $('.class').GeoSlider({
-    auto:true,
+    autoPlay:true,
     speed:300
 })
