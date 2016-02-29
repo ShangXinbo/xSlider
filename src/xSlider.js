@@ -46,8 +46,12 @@
                 autoPlay: true,     // it's auto play when this param is true 
                 interval: 3000,     // the time between switch
                 speed: 400,         // the time duiring switch
-                nav: true,          // show the nav 
-                page: false,        // show the page of the slider
+                foot: false,        // config of the showing footer
+                /*{
+                    className: '',  //  the className of focus footer 
+                    nav: false,     // show the nav 
+                    page: false,    // show the page of the slider
+                }*/
                 scrollNum: 1,       // switch nums of item everytime
                 direction: 'ltr',   // ltr from left to right and rtl from right to left
                 controls: true,     // show the left and right arrow buttons
@@ -95,10 +99,10 @@
         },
         // set nav and pages
         setFoot: function() {
-            if (this.OPTIONS.nav || this.OPTIONS.page) {
+            if (this.OPTIONS.foot) {
                 var _this = this;
-                var dom = '<div class="xslider-nav">';
-                if (this.OPTIONS.nav) {
+                var dom = '<div class="'+ this.OPTIONS.foot.className +'">';
+                if (this.OPTIONS.foot.nav) {
                     for (var i = 0; i < this.GROUP_NUM; i++) {
                         if (i == 0) {
                             dom += '<span class="active"></span>';
@@ -107,13 +111,13 @@
                         }
                     }
                 }
-                if (this.OPTIONS.page) {
-                    dom += '<p><font>1</font>/' + this.OPTIONS.GROUP_NUM + '</p>';
+                if (this.OPTIONS.foot.page) {
+                    dom += '<p><font>1</font>/' + this.GROUP_NUM + '</p>';
                 }
                 dom += '</div>';
-                this.CONTAIN.append(dom).find('.xslider-nav').on('click', 'span', function() {
+                this.CONTAIN.append(dom).find('.' + this.OPTIONS.foot.className).on('click', 'span', function() {
                     if (!_this.IS_WORKING) {
-                        var pos = $('.xslider-nav span', _this.CONTAIN).index($(this));
+                        var pos = $('.'+ _this.OPTIONS.foot.className +' span', _this.CONTAIN).index($(this));
                         _this.animate(pos);
                     }
                 });
@@ -186,13 +190,16 @@
             });
         },
         setPosition: function(num) {
-            if (this.OPTIONS.nav) {
-                this.CONTAIN.find('.xslider-nav').find('span').removeClass('active').eq(num).addClass('active');
-            }
-            if (this.OPTIONS.page) {
-                this.CONTAIN.find('.xslider-nav').find('font').html(num + 1);
-            }
-        },
+            if(this.OPTIONS.foot){
+                var footer = this.CONTAIN.find('.' + this.OPTIONS.foot.className);
+                if (this.OPTIONS.foot.nav) {
+                    footer.find('span').removeClass('active').eq(num).addClass('active');
+                }
+                if (this.OPTIONS.foot.page) {
+                    footer.find('font').html(num + 1);
+                }
+            }  
+        }/*,
         destroy: function() {
             if (item.length > 1) {
                 if (options.controls) {
@@ -204,7 +211,7 @@
                 this.stopAuto();
                 working = false;
             }
-        }
+        }*/
     };
 
     $.fn.myAnimate = $.Velocity ? $.fn.velocity : $.fn.animate;
@@ -217,6 +224,4 @@
             } 
         });
     }
-    
-
 }));
