@@ -23,7 +23,9 @@ controls | boolen      | 是否显示下一个和上一个的切换按钮
 hoverStop| boolen      | 鼠标划上停止自动播放，划出继续自动播放 
 
 ##示例
+```sh
 $('.class').xSlider({
     autoPlay:true,
     speed:300
 })
+```

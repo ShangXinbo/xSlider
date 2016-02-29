@@ -22,7 +22,9 @@ controls | boolen      | show the next button and prev button
 hoverStop| boolen      | when mouse over the widget, auto play stop. 
 
 ##demo
+```sh
 $('.class').xSlider({
     autoPlay:true,
     speed:300
 })
+```
