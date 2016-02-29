@@ -4,9 +4,9 @@
 [English introduction](https://github.com/ShangXinbo/xSlider/blob/master/README.md)
 
 ##说明
-*该插件基于jQuery,必须要在jquery引入之后执行，否则会报错。
-*该插件理论可兼容至IE6
-*该插件可以使用velocity,提高动画性能
+* 该插件基于jQuery,必须要在jquery引入之后执行，否则会报错。
+* 该插件理论可兼容至IE6
+* 该插件可以使用velocity,提高动画性能
 
 
 ##设置
