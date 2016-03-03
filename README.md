@@ -39,3 +39,6 @@ $('.class').xSlider({
     }
 })
 ```
+
+License
+GNU
