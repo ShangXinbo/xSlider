@@ -40,5 +40,5 @@ $('.class').xSlider({
 })
 ```
 
-License
+##License
 GNU
